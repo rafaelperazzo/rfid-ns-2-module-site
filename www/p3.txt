@@ -1,0 +1,2 @@
+latitude,longitude,hora,portao
+-23.568068,-46.73591,09:24,3

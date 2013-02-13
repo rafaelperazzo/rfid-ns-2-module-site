@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <meta name="keywords" content="rfid, ns-2, ns2, networks, ns-2 module">
+    <title>RFID ns-2 Module - Documentation</title>
+  </head>
+  <body>
+    <table style="width: 1261px; height: 137px;" border="0">
+      <tbody>
+        <tr>
+          <td><img style="width: 118px; height: 147px;" alt="logo_ime"
+              src="logo_ime.jpg"><img style="width: 332px; height: 255px;"
+              alt="network" src="network.jpg"><br>
+          </td>
+          <td>
+            <h1 style="color: rgb(0, 0, 0); font-family: 'Times New Roman';
+              font-style: normal; font-variant: normal; letter-spacing: normal;
+              line-height: normal; orphans: 2; text-indent: 0px; text-transform:
+              none; white-space: normal; widows: 2; word-spacing: 0px;
+              text-align: center;"><span style="font-style: italic;">RFID modul</span><span
+                style="font-style: italic;">e for ns-2 simulator</span><a
+                name="introduction"></a></h1>
+            <p style="text-align: center;"><span style="font-style: italic;">Rafael
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Perazzo Barbosa Mota</span></p>
+            <p style="text-align: center;"><span style="font-style: italic;">perazzo
+
+
+
+
+
+
+
+
+
+
+
+
+                at ime,usp,br</span></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="rfid_module.html"><br>
+      HOME</a><br>
+    <hr style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size:
+      medium; font-style: normal; font-variant: normal; font-weight: normal;
+      letter-spacing: normal; line-height: normal; orphans: 2; text-align:
+      start; text-indent: 0px; text-transform: none; white-space: normal;
+      widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto;
+      -webkit-text-stroke-width: 0px;">
+    <div style="text-align: center;">
+      <h1><span style="font-weight: bold;"></span><span style="font-weight:
+          bold;"><span style="font-family: 'Times New Roman';">DOCUMENTATION</span></span></h1>
+    </div>
+    <hr style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size:
+      medium; font-style: normal; font-variant: normal; font-weight: normal;
+      letter-spacing: normal; line-height: normal; orphans: 2; text-align:
+      start; text-indent: 0px; text-transform: none; white-space: normal;
+      widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto;
+      -webkit-text-stroke-width: 0px;">
+    <h2 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style:
+      normal; font-variant: normal; letter-spacing: normal; line-height: normal;
+      orphans: 2; text-align: start; text-indent: 0px; text-transform: none;
+      white-space: normal; widows: 2; word-spacing: 0px;
+      -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;"><a
+        name="introduction">Setting nodes parameters<br>
+      </a></h2>
+    <span style="font-weight: bold;"></span><span style="font-weight: bold;"><span
+        style="color: rgb(255, 0, 0);"></span><span style="font-family: Courier
+        New,Courier,monospace;">set val(chan) Channel/WirelessChannel ;# channel
+        type</span></span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set
+      val(prop) Propagation/TwoRayGround ;# radio-propagation model:
+      TwoRayGround/FreeSpace</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-weight: bold;"><span style="font-family: Courier
+        New,Courier,monospace;">set val(netif) Phy/WirelessPhy ;# network
+        interface type</span></span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-weight: bold;"><span style="font-family: Courier
+        New,Courier,monospace;">set val(mac) Mac ;# MAC type</span></span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set
+      val(ifq) Queue/DropTail/PriQueue ;# interface queue type</span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set val(ll)
+      LL ;# link layer type</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set
+      val(ant) Antenna/OmniAntenna ;# antenna model</span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set
+      val(ifqlen) 1000 ;# max packet in ifq</span><span style="font-family:
+      Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set val(nn)
+      5 ;# number of mobilenodes</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set val(rp)
+      DumbAgent ;# routing protocol</span><span style="font-family: Courier
+      New,Courier,monospace;"></span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set val(x)
+      30 ;# X dimension of topography</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set val(y)
+      30 ;# Y dimension of topography </span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set
+      val(stop) 100 ;# time of simulation end</span><span style="font-family:
+      Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set ns [new
+      Simulator]</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set tracefd
+      [open rfid.tr w]</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"> </span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$val(netif)
+      set Pt_ 0.28</span><br>
+    <span style="font-weight: bold;"><span style="font-family: Courier
+        New,Courier,monospace;">$val(netif) set RXThresh_ 7.64097e-06</span></span><span
+      style="font-weight: bold;"><span style="font-family: Courier
+        New,Courier,monospace;"> #Max distance of 5m</span></span><br>
+    <br>
+    <span style="font-family: Courier New,Courier,monospace;">$ns use-newtrace</span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$ns
+      trace-all $tracefd</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"></span><span
+      style="font-family: Courier New,Courier,monospace;"></span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"># set up
+      topography object</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set topo
+      [new Topography]</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$topo
+      load_flatgrid $val(x) $val(y)</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">create-god
+      [expr $val(nn)]</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set chan_1_
+      [new $val(chan)]</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"># configure
+      the nodes</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$ns
+      node-config -adhocRouting $val(rp) \</span><span style="font-family:
+      Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-llType
+      $val(ll) \</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-macType
+      $val(mac) \</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-ifqType
+      $val(ifq) \</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-ifqLen
+      $val(ifqlen) \</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-antType
+      $val(ant) \</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-propType
+      $val(prop) \</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-phyType
+      $val(netif) \</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-channelType
+
+
+
+      $val(chan) \</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-topoInstance
+
+
+
+      $topo \</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-agentTrace
+      ON \</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-routerTrace
+
+
+
+      OFF \</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-macTrace
+      OFF \</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">-movementTrace
+
+
+
+      OFF</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">#-channel
+      $chan_1_</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><br>
+    <h2 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style:
+      normal; font-variant: normal; letter-spacing: normal; line-height: normal;
+      orphans: 2; text-align: start; text-indent: 0px; text-transform: none;
+      white-space: normal; widows: 2; word-spacing: 0px;
+      -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;"><a
+        name="introduction">Setting node positions<br>
+      </a></h2>
+    <span style="font-family: Courier New,Courier,monospace;">for {set i 0} {$i
+      &lt; $val(nn) } { incr i } {</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+
+
+
+      set n($i) [$ns node] </span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">}</span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"># Provide </span><span
+      style="font-family: Courier New,Courier,monospace;">reader position</span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$n(0) set
+      X_ 10</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$n(0) set
+      Y_ 10</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$n(0) set
+      Z_ 0.0</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">#LOCALIZAÇÃO
+
+
+
+      ALEATÓRIA DAS TAGS</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set rng1
+      [new RNG]</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$rng1 seed
+      0</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">set rng2
+      [new RNG]</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$rng2 seed
+      0</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">for {set i
+      1} {$i &lt; $val(nn) } { incr i } {</span><span style="font-family:
+      Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+      $n($i) set X_ [$rng1 uniform 8 12]</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+      $n($i) set Y_ [$rng2 uniform 8 12]</span><span style="font-family: Courier
+      New,Courier,monospace;"></span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+      $n($i) set Z_ 0.0</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">}</span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><br>
+    <h2 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style:
+      normal; font-variant: normal; letter-spacing: normal; line-height: normal;
+      orphans: 2; text-align: start; text-indent: 0px; text-transform: none;
+      white-space: normal; widows: 2; word-spacing: 0px;
+      -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;"><a
+        name="introduction">Creating the Agents<br>
+      </a></h2>
+    <span style="font-family: Courier New,Courier,monospace;"> set reader1 [new
+      Agent/RfidReader]<br>
+      for {set i 1} {$i &lt; $val(nn) } { incr i } {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set tag($i) [new Agent/RfidTag]<br>
+      &nbsp;&nbsp;&nbsp; $tag($i) set tagEPC_ $i+10<br>
+      &nbsp;&nbsp;&nbsp; $tag($i) set time_ 1<br>
+      }<br>
+      <br>
+      #Setting reader parameters<br>
+      $reader1 set id_ 200 #reader ID<br>
+      $reader1 set service_ 2 #Standard singularization (EPCGlobal)<br>
+      <br>
+      #Connecting nodes to agents<br>
+      for {set i 1} {$i &lt; $val(nn) } { incr i } {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $ns attach-agent $n($i)
+      $tag($i)<br>
+      }<br>
+      #Connecting reader node to reader agent<br>
+      $ns attach-agent $n(0) $reader1<br>
+      <br>
+      #Connecting reader to all tags<br>
+      for {set i 1} {$i &lt; $val(nn) } { incr i } {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $ns connect $reader1 $tag($i)<br>
+      }<br>
+      <br>
+    </span>
+    <h2 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style:
+      normal; font-variant: normal; letter-spacing: normal; line-height: normal;
+      orphans: 2; text-align: start; text-indent: 0px; text-transform: none;
+      white-space: normal; widows: 2; word-spacing: 0px;
+      -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;"><a
+        name="introduction">Query tags<br>
+      </a></h2>
+    <span style="font-family: Courier New,Courier,monospace;">$ns at $i
+      "$reader1 standard-query-tags"</span><br>
+    <br>
+    <h2 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style:
+      normal; font-variant: normal; letter-spacing: normal; line-height: normal;
+      orphans: 2; text-align: start; text-indent: 0px; text-transform: none;
+      white-space: normal; widows: 2; word-spacing: 0px;
+      -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;"><a
+        name="introduction">Ending simulation<br>
+      </a></h2>
+    <span style="font-family: Courier New,Courier,monospace;"># Telling nodes
+      when the simulation ends</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">for {set i
+      0} {$i &lt; $val(nn) } { incr i } {</span><span style="font-family:
+      Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$ns at
+      $val(stop) "$n($i) reset";</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">}</span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"># ending
+      nam and the simulation </span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">#$ns at
+      $val(stop) "$ns nam-end-wireless $val(stop)"</span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$ns at
+      $val(stop) "stop"</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$ns at
+      $val(stop) "puts \"end simulation\" ; $ns halt"</span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">proc stop
+      {} {</span><span style="font-family: Courier New,Courier,monospace;"></span><span
+      style="font-family: Courier New,Courier,monospace;"></span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">global ns
+      tracefd</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$ns
+      flush-trace</span><span style="font-family: Courier
+      New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">close
+      $tracefd</span><span style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">}</span><span
+      style="font-family: Courier New,Courier,monospace;"><br>
+    </span><span style="font-family: Courier New,Courier,monospace;">$ns run</span><br>
+    <br>
+    <h2 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style:
+      normal; font-variant: normal; letter-spacing: normal; line-height: normal;
+      orphans: 2; text-align: start; text-indent: 0px; text-transform: none;
+      white-space: normal; widows: 2; word-spacing: 0px;
+      -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;"><a
+        name="introduction">View debug messages<br>
+      </a></h2>
+    <span style="font-style: italic;"></span><span style="font-style: italic;"></span>Just
+
+    set the messages_ node propertie&nbsp; to 1<br>
+    <br>
+    Ex: <br>
+    <span style="font-family: Courier New,Courier,monospace;">$tag($i) set
+      messages_ 1</span><br>
+    <span style="font-family: Courier New,Courier,monospace;">$reader1 set mes</span><span
+      style="font-family: Courier New,Courier,monospace;">sages_ 1</span><br>
+    <div style="text-align: center;"><span style="font-weight: bold;">Download
+        full </span><span style="font-weight: bold;"><a href="rfid.tcl">rfid.tcl</a></span><span
+        style="font-weight: bold;"> file</span></div>
+    <h2 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style:
+      normal; font-variant: normal; letter-spacing: normal; line-height: normal;
+      orphans: 2; text-align: start; text-indent: 0px; text-transform: none;
+      white-space: normal; widows: 2; word-spacing: 0px;
+      -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;"><a
+        name="introduction">Trace format<br>
+      </a></h2>
+    <table style="width: 100%" border="1">
+      <tbody>
+        <tr>
+          <td style="text-align: center; background-color: rgb(153, 153, 153);"><span
+              style="font-weight: bold;">f</span><span style="font-weight:
+              bold;">lag</span><span style="font-weight: bold;"><br>
+            </span></td>
+          <td style="text-align: center; background-color: rgb(153, 153, 153);"><span
+              style="font-weight: bold;">type</span><span style="font-weight:
+              bold;"><br>
+            </span></td>
+          <td style="text-align: center; background-color: rgb(153, 153, 153);"><span
+              style="font-weight: bold;">Value</span><span style="font-weight:
+              bold;"><br>
+            </span></td>
+        </tr>
+        <tr>
+          <td>s<br>
+            r</td>
+          <td>char</td>
+          <td>send<br>
+            read</td>
+        </tr>
+        <tr>
+          <td>-t</td>
+          <td>double</td>
+          <td><span style="font-style: italic;">time</span></td>
+        </tr>
+        <tr>
+          <td>-Zt</td>
+          <td>int</td>
+          <td><span style="font-style: italic;">fl</span><span
+              style="font-style: italic;">ow</span><span style="font-style:
+              italic;"> type</span><br>
+            0 - Reader to tag<br>
+            1 - Tag to reader</td>
+        </tr>
+        <tr>
+          <td>-Zi</td>
+          <td>int</td>
+          <td><span style="font-style: italic;">Node ID</span></td>
+        </tr>
+        <tr>
+          <td>-Zs</td>
+          <td>int</td>
+          <td><span style="font-style: italic;">Packet source ID</span></td>
+        </tr>
+        <tr>
+          <td>-Zd</td>
+          <td>int</td>
+          <td><span style="font-style: italic;">Packet destination ID</span></td>
+        </tr>
+        <tr>
+          <td>-Zc</td>
+          <td>int</td>
+          <td><span style="font-style: italic;">Command</span><br>
+            0 - RC_QUERY<br>
+            1 - RC_QUERY_ADJUST<br>
+            2 - RC_QUERY_REPLY<br>
+            3 - RC_ACK <br>
+            4 - RC_NAK<br>
+            5 - TC_REPLY</td>
+        </tr>
+        <tr>
+          <td>-Zq</td>
+          <td>int</td>
+          <td><span style="font-style: italic;">type of service</span><br>
+            0 - No service (deprecated)<br>
+            1 - QoS mechanism (deprecated)<br>
+            2 - Q algorithm</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">-Zr</td>
+          <td style="vertical-align: top;">double</td>
+          <td style="vertical-align: top;"><span style="font-style: italic;">rng16</span><br>
+            Random number generated from Q value (2^Q-1)</td>
+        </tr>
+        <tr>
+          <td>-Zv</td>
+          <td>int</td>
+          <td><span style="font-style: italic;">Q value</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <hr style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size:
+      medium; font-style: normal; font-variant: normal; font-weight: normal;
+      letter-spacing: normal; line-height: normal; orphans: 2; text-align:
+      start; text-indent: 0px; text-transform: none; white-space: normal;
+      widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto;
+      -webkit-text-stroke-width: 0px;"><span style="color: rgb(0, 0, 0);
+      font-family: 'Times New Roman'; font-size: medium; font-style: normal;
+      font-variant: normal; font-weight: normal; letter-spacing: normal;
+      line-height: normal; orphans: 2; text-align: start; text-indent: 0px;
+      text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;
+      -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display:
+      inline !important; float: none;"><a href="rfid_module.html">HOME</a><br>
+      <br>
+    </span>
+    <table style="width: 100%;" border="0">
+      <tbody>
+        <tr>
+          <td style="text-align: right;"><img style="width: 122px; height:
+              122px;" alt="logo_usp" src="logo_usp.jpg"><br>
+          </td>
+          <td><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman';
+              font-size: medium; font-style: normal; font-variant: normal;
+              font-weight: normal; letter-spacing: normal; line-height: normal;
+              orphans: 2; text-align: start; text-indent: 0px; text-transform:
+              none; white-space: normal; widows: 2; word-spacing: 0px;
+              -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;
+              display: inline !important; float: none;">I would like to
+              acknowledge Prof. <a href="http://www.ime.usp.br/%7Ebatista">Daniel
+
+
+
+
+
+                Macêdo Batista</a>, <a href="http://www.usp.br">USP</a>, <a
+                href="http://www.ime.usp.br">IME</a>.<br>
+              <br>
+              <span style="font-style: italic;">Developed by Rafael Perazzo
+                Barbosa Mota (perazzo at ime,usp,br)</span><br>
+            </span></td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size:
+      medium; font-style: normal; font-variant: normal; font-weight: normal;
+      letter-spacing: normal; line-height: normal; orphans: 2; text-align:
+      start; text-indent: 0px; text-transform: none; white-space: normal;
+      widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto;
+      -webkit-text-stroke-width: 0px; display: inline !important; float: none;"></span><span
+      style="color: rgb(0, 0, 238);"><span style="font-family: 'Times New
+        Roman';"><span style="text-decoration: underline;"><span style="color:
+            rgb(0, 0, 0);"></span></span></span></span>
+  </body>
+</html>
