@@ -56,8 +56,10 @@
 
 
 
+
                 Perazzo Barbosa Mota</span></p>
             <p style="text-align: center;"><span style="font-style: italic;">perazzo
+
 
 
 
@@ -117,12 +119,17 @@
 
 
 
+
                 update: <php title="echo date (&quot;d/m/Y - H:..."
                   xmlns="http://disruptive-innovations.com/zoo/bluegriffon"><!--?php echo date ("d/m/Y - H:i", filemtime("rfid_module.php"));?--></php><php
                   title="echo date (&quot;d/m/Y - H:..."
                   xmlns="http://disruptive-innovations.com/zoo/bluegriffon"><!--?php echo date ("d/m/Y - H:i", filemtime("rfid_module.php"));?--></php><php
                   title="echo date (&quot;d/m/Y - H:..."
-                  xmlns="http://disruptive-innovations.com/zoo/bluegriffon"><!--?php echo date ("d/m/Y - H:i", filemtime("rfid_module.php"));?--></php><br>
+                  xmlns="http://disruptive-innovations.com/zoo/bluegriffon"><!--?php echo date ("d/m/Y - H:i", filemtime("rfid_module.php"));?--></php><php
+                  title="echo date (&quot;d/m/Y - H:..."
+                  xmlns="http://disruptive-innovations.com/zoo/bluegriffon"><!--?php echo date ("d/m/Y - H:i", filemtime("rfid_module.php"));?--></php><php
+                  title="echo date (&quot;d/m/Y - H:..."
+                  xmlns="http://disruptive-innovations.com/zoo/bluegriffon"><?php echo date ("d/m/Y - H:i", filemtime("rfid_module.php"));?></php><br>
               </span></p>
           </td>
         </tr>
@@ -165,11 +172,13 @@
 
 
 
+
           Systems </span><span style="font-weight: bold;">research group</span></span>,
       <span style="font-weight: bold;">Institute of </span><span
         style="font-weight: bold;">Mathematics</span><span style="font-weight:
         bold;"> and Statistics (IME)</span>, <span style="font-weight: bold;"></span><span
         style="font-weight: bold;"></span><span style="font-weight: bold;">University
+
 
 
 
@@ -278,6 +287,7 @@ href="http://www.gs1.org/gsmp/kc/epcglobal/uhfc1g2/uhfc1g2_1_2_0-standard-200805
               float: none;">Namboodiri, Vinod, et al. "<a
                 href="http://www.sciencedirect.com/science/article/pii/S0140366412001776">An
 
+
                 extensive study of slotted Aloha-based RFID anti-collision
                 protocols</a>."<span class="Apple-converted-space">&nbsp;</span></span></span></span></span><span
         style="font-weight: bold;"><span style="font-style: italic;"><span
@@ -303,6 +313,7 @@ href="http://www.gs1.org/gsmp/kc/epcglobal/uhfc1g2/uhfc1g2_1_2_0-standard-200805
 
 
 
+
               Volume 35, Issue 36, 15 September 2012, pages 1955--1966.<br>
             </span></span></span></span></p>
     <p style="color: rgb(0, 0, 0); font-size: medium; font-style: normal;
@@ -317,14 +328,21 @@ href="http://www.gs1.org/gsmp/kc/epcglobal/uhfc1g2/uhfc1g2_1_2_0-standard-200805
 
 
 
-      can be shown bellow</p>
+
+      can be shown bellow<sup>*</sup></p>
+    <sub><cite>* The paper values are not exact. Until now the authors did not
+        provide the table that generated the curve. The points were estimated by
+        linear interpolation assuming that the points bellow are correct. </cite></sub><sub><cite><br>
+      </cite></sub><sub><cite>(50,160) and (500,1500)</cite></sub><br>
+    <br>
     <table style="width: 100%;" border="0">
       <tbody>
         <tr>
-          <td><a href="identification.eps"><img alt="identificarion"
-                src="identification.jpg"></a><br>
+          <td><img style="width: 720px; height: 503px;" alt="image1"
+              src="identification.jpg"><br>
           </td>
-          <td><a href="error.eps"><img alt="error figure" src="error.jpg"></a><br>
+          <td><img style="width: 657px; height: 459px;" alt="image2"
+              src="dif.jpg"><br>
           </td>
         </tr>
       </tbody>
@@ -418,11 +436,13 @@ href="http://sourceforge.net/projects/nsnam/files/allinone/ns-allinone-2.35/ns-a
 
 
 
+
           package<br>
         </a></li>
       <li>Download the latest ns-2<span class="Apple-converted-space"> </span><a
           href="https://github.com/rafaelperazzo/ns-2_rfid/archive/master.zip"
           title="RFID Module">RFID module</a><span class="Apple-converted-space">&nbsp;</span>source
+
 
 
 
@@ -537,6 +557,7 @@ href="http://sourceforge.net/projects/nsnam/files/allinone/ns-allinone-2.35/ns-a
 
 
 
+
               source code version 1.0 (31/01/2013)</a></td>
           <td style="vertical-align: top; text-align: center;">---</td>
         </tr>
@@ -566,13 +587,24 @@ href="http://sourceforge.net/projects/nsnam/files/allinone/ns-allinone-2.35/ns-a
               New,Courier,monospace;">$ gnuplot graficos.plt</span></td>
         </tr>
         <tr>
-          <td style="vertical-align: top;">Simulation scripts used to generate
-            values used on graphics above</td>
+          <td style="vertical-align: top;">Simulation scripts<sup>*</sup> used
+            to generate values used on graphics above<br>
+            <br>
+            <sub>*You should have the perl pack</sub><sub>ages:</sub><sub><br>
+            </sub><sub><a
+href="http://search.cpan.org/%7Eyunfang/Statistics-TTest-1.1.0/PointEstimation.pm">Statistics::
+
+                PointEstimation</a></sub><sub><br>
+            </sub><sub><a
+href="http://search.cpan.org/%7Ecolink/Statistics-Descriptive-2.6/Descriptive.pm"><span
+                  style="text-decoration: underline;">Statistics::Descriptive</span></a></sub></td>
           <td style="vertical-align: top;"><a href="simulation.tar.bz2">simulation.tar.bz2</a></td>
           <td style="vertical-align: top;"><span style="font-family: Courier
               New,Courier,monospace;">$ ./calculate.sh 51 501 50 100<br>
             </span>Simulate number of nodes from 50 to 500, steps of 50, 100
-            iterations.</td>
+            iterations.<br>
+            It will generate around 40Gb of trace files.<br>
+            Time: +- 160 minutes (Core i7 - Quad-Core, 16Gb RAM)</td>
         </tr>
       </tbody>
     </table>

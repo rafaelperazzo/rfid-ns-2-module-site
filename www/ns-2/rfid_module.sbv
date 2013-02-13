@@ -1,0 +1,29 @@
+00:00:01.000,00:00:06.000
+Go to ns-allinone-2.25 folder
+
+00:00:06.408,00:00:11.763
+Go to ns-2.35 folder (this folder is the downloaded one)
+
+00:00:14.408,00:00:19.763
+run command: ./configure
+
+00:00:29.408,00:00:34.763
+run command: make clean
+
+00:00:40.408,00:00:50.763
+run command: make
+
+00:00:55.408,00:02:14.763
+wait ...
+
+00:02:17.408,00:02:29.763
+run command: sudo make install
+
+00:02:37.408,00:02:42.763
+Go to cenarios/testes: cd cenarios/testes
+
+00:02:49.408,00:03:00.763
+run command: ./show.sh
+
+00:03:05.408,00:03:15.763
+You will see the number of identified tags
